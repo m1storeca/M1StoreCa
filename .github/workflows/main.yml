@@ -1,0 +1,25 @@
+name: Build_M1Store_Dylib
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Theos
+        run: |
+          sudo git clone --recursive https://github.com/theos/theos.git /opt/theos
+          echo "THEOS=/opt/theos" >> $GITHUB_ENV
+          
+      - name: Build Dylib
+        run: |
+          make
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: M1Store_Dylib_File
+          path: .theos/obj/debug/*.dylib
