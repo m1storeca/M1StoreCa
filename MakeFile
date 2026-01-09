@@ -1,14 +1,10 @@
-# ناوی ئەو فایلەی دروست دەبێت
-TWEAK_NAME = M1StoreWelcome
-
-# ناوی ئەو فایلانەی کۆدیان تێدایە (ئەوەی پێشتر دروستت کرد)
-M1StoreWelcome_FILES = Tweak.x
-
-# ئەو فریمۆرکەی بۆ دایەلۆگ پێویستە
-M1StoreWelcome_FRAMEWORKS = UIKit
-
-# ڕێکخستنی جۆری پڕۆسێسەر (بۆ ئایفۆنە نوێیەکان)
-ARCHS = arm64 arm64e
+export ARCHS = arm64 arm64e
+export TARGET = iphone:clang:latest:13.0
 
 include $(THEOS)/makefiles/common.mk
+
+TWEAK_NAME = M1StoreWelcome
+M1StoreWelcome_FILES = Tweak.x
+M1StoreWelcome_FRAMEWORKS = UIKit
+
 include $(THEOS_MAKE_PATH)/tweak.mk
