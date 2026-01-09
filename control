@@ -1,0 +1,9 @@
+Package: com.m1storeca.welcome
+Name: M1Store Welcome
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm64
+Description: Welcome popup for M1Store
+Maintainer: M1StoreCa
+Author: M1StoreCa
+Section: Tweaks
